@@ -4,11 +4,17 @@ import java.util.ArrayList;
  
 public class Registry {
     private ArrayList<Person> people;
- 
+
+    /**
+     * Constructor for Registry
+     */
     public Registry(){
         people = new ArrayList<>();
     }
- 
+    
+    /**
+     * Validates the status of the person
+     */
     public RegisterResult registerVoter(Person p) {
         Person persona = p;
         if (persona.getAge() <= 0 || persona.getAge() > 110) {
@@ -23,7 +29,10 @@ public class Registry {
             return RegisterResult.VALID;
         }
     }
- 
+    
+    /**
+     * Check if person had voted
+     */
     public RegisterResult registerVote(Person p) {
         boolean duplicate = false;
         int idPerson = p.getId();
